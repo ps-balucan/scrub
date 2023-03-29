@@ -5,6 +5,7 @@ require_relative 'core_ext/bool'
 require_relative 'core_ext/hash'
 require_relative 'core_ext/number'
 require_relative 'core_ext/array'
+require_relative 'core_ext/nil'
 
 
 class CLI

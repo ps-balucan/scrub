@@ -5,12 +5,15 @@ path = ARGV[1]
 sensitive_keys_path = ARGV[0]
 
 begin
-    puts("passing in", path, sensitive_keys_path)
+    puts "Running CLI Scrub Tool"
     cli_tool = CLI.new(path, sensitive_keys_path)
     cli_tool.run
 rescue Errno::ENOENT
-    p "Please make sure the file(s) exist and/or are in the correct directory"
+    p "File(s) not found in path [#{path}] or [#{sensitive_keys_path}]"
 rescue ArgumentError
     p "There was something wrong with the files inputted."
 end
 
+
+
+puts "Done running CLI Scrub Tool"
