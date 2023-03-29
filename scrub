@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require './lib/cli'
+
+path = ARGV[1]
+sensitive_keys_path = ARGV[0]
+
+begin
+    puts("passing in", path, sensitive_keys_path)
+    cli_tool = CLI.new(path, sensitive_keys_path)
+    cli_tool.run
+rescue Errno::ENOENT
+    p "Please make sure the file(s) exist and/or are in the correct directory"
+rescue ArgumentError
+    p "There was something wrong with the files inputted."
+end
+
