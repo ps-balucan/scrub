@@ -35,7 +35,7 @@ You can start the ruby script from the terminal
 
 ```
 # Run this in your terminal
-./scrub path_to_input path_to_sensitive_keys
+./scrub path_to_sensitive_fields path_to_input
 ```
 
 This will output a file in your project directory named `output.json`
@@ -73,4 +73,5 @@ This section lists down current limitations and my thoughts for improvement as w
 1. Refactor testing suite - the current testing suite just tries to loop through folders existing in the test_cases folder. It would be good to split these out into actual test methods for better maintainability.
 2. Error handling - It would vastly improve the user experience if edge cases and the errors arising from them would be bubbled up safely (So the user would know what's wrong as well!)
 3. Recursion depth - This would depend on the intended use case of the script but since the tool uses recursion to explore nested objects, a recursion limit may be met. 
-4. ...and a few more I will add
+4. Add cli flags like -h for command help, and flags for the option to modify output filename
+5. ...and a few more I will add
